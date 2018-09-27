@@ -1,8 +1,10 @@
 %% add the subfolders to the path
 % eg: addpath(sprintf('%s/kzk',pwd))
+addpath(sprintf('%s/exp',pwd));
+addpath(sprintf('%s/exp/fig',pwd));
 
 %% figure settings
-fig_type = 'normal'; 
+fig_type = 'subfig'; 
 switch fig_type
     case 'normal' % normal type
         FONT_SIZE = 16;
@@ -25,7 +27,6 @@ set(groot, 'defaultAxesFontName', 'Times New Roman');
 set(groot, 'defaultAxesFontSize', FONT_SIZE);
 set(groot, 'defaultPolarAxesFontSize', FONT_SIZE);
 set(groot, 'defaultFigureColormap', jet)
-set(groot, 'defaultColorbarTextInterpreter', 'latex')
 set(groot, 'defaultLineMarkerSize', MARKER_SIZE)
     
 %% Color scheme
