@@ -82,7 +82,8 @@ draw(circle(O, r_err), gray+dashed);
 real xmax = 0.6;
 real ymax = 0.6;
 real zmax = 0.55;
-draw(O--xmax*X, L=Label('$x$',position=EndPoint), align=X,arrow=Arrow3(TeXHead2(normal=Y)));
+draw(O--xmax*X, dashed);
+draw(O-- -xmax*X, L=Label('$x$',position=EndPoint), align=-X,arrow=Arrow3(TeXHead2(normal=Y)));
 draw(O--ymax*Y, L=Label('$z$',position=EndPoint), arrow=Arrow3(TeXHead2(normal=X)));
 draw(O--zmax*Z, L=Label('$y$',position=EndPoint), arrow=Arrow3(TeXHead2(normal=X)));
 
