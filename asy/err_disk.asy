@@ -45,8 +45,7 @@ dot(shift(leg_shift)*loc_c,black);
 draw(shift(leg_shift)*(2*h*X--2*h*X+w*Y),L=Label('3.8cm',p=label_fontsize,align=X-Z),arrow=None,bar=Bars3(dir=X));
 draw(shift(leg_shift)*(-w*Y+h*X-- -w*Y+h*X+2*h*Z),L=Label('4.8cm',p=label_fontsize,align=-Y),arrow=None,bar=Bars3(dir=Y));
 draw(shift(leg_shift)*((w+h)*Y+h*X-- (w+h)*Y-h*X),L=Label('4.8cm',p=label_fontsize,align=1.5*Y-0.5*Z),arrow=None,bar=Bars3(dir=Y));
-draw(shift(leg_shift)*(loc_c -- loc_c+2*w*Z), L=Label('Sound center',p=label_fontsize,position=EndPoint));
-/* draw(shift(leg_shift)*(loc_c -- loc_c+2*w*Y+w*Z), L=Label('Sound center',p=label_fontsize,position=EndPoint)); */
+draw(shift(leg_shift)*(loc_c -- loc_c+1.5*w*Z), L=Label('Sound center',p=label_fontsize,position=EndPoint), align=Z);
 
 // Draw the error points
 real[] theta = {0,45,45,45,45,90,90,90,90};
@@ -76,13 +75,18 @@ draw(shift(0.5Z)*(O--0.02Z-0.06Y), L=Label('Error mic.',p=label_fontsize,positio
 draw(circle(r_err/sqrt(2)*Z, r_err/sqrt(2)), gray+dashed);
 draw(circle(O, r_err), gray+dashed);
 // vertical
+/* for (int i=1; i<loc_e.length; ++i) */
+/* { */
+	/* draw(arc(c=O, loc_e[0], loc_e[i]), dotted); */
+/* } */
 
 
 // Draw the coordinates
 real xmax = 0.6;
 real ymax = 0.6;
 real zmax = 0.55;
-draw(O--xmax*X, L=Label('$x$',position=EndPoint), align=X,arrow=Arrow3(TeXHead2(normal=Y)));
+draw(O--xmax*X, dashed);
+draw(O-- -xmax*X, L=Label('$x$',position=EndPoint), align=-X,arrow=Arrow3(TeXHead2(normal=Y)));
 draw(O--ymax*Y, L=Label('$z$',position=EndPoint), arrow=Arrow3(TeXHead2(normal=X)));
 draw(O--zmax*Z, L=Label('$y$',position=EndPoint), arrow=Arrow3(TeXHead2(normal=X)));
 
