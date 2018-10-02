@@ -66,7 +66,7 @@ for (int i=0; i<loc_e.length; ++i)
 	/* write(loc_e[i]); */
 	dot(loc_e[i], purple);
 	draw(O--loc_e[i], gray+dashed);
-	label(string(i+1),loc_e[i],align=-0.2X+0.35Z+1.5Y,p=label_fontsize+2pt);
+	label(string(i+1),loc_e[i],align=-0.2X+0.7Z+1.5Y,p=label_fontsize+2pt);
 }
 // Draw the label for error microphones
 draw(shift(0.5Z)*(O--0.02Z-0.06Y), L=Label('Error mic.',p=label_fontsize,position=EndPoint),align=-Y);
@@ -82,7 +82,8 @@ draw(circle(O, r_err), gray+dashed);
 real xmax = 0.6;
 real ymax = 0.6;
 real zmax = 0.55;
-draw(O--xmax*X, L=Label('$x$',position=EndPoint), align=X,arrow=Arrow3(TeXHead2(normal=Y)));
+draw(O--xmax*X, dashed);
+draw(O-- -xmax*X, L=Label('$x$',position=EndPoint), align=-X,arrow=Arrow3(TeXHead2(normal=Y)));
 draw(O--ymax*Y, L=Label('$z$',position=EndPoint), arrow=Arrow3(TeXHead2(normal=X)));
 draw(O--zmax*Z, L=Label('$y$',position=EndPoint), arrow=Arrow3(TeXHead2(normal=X)));
 
